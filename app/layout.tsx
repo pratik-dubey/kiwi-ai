@@ -30,7 +30,7 @@ export default function RootLayout({
     <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
     <body className={`${montserrat.variable} font-sans`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem storageKey="theme">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="theme">
           <Provider>{children}</Provider>
         </ThemeProvider>
       </body>
