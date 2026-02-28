@@ -141,7 +141,7 @@ const Header = () => {
         </div></SignInButton> : <UserButton/>}
 
         {/* Mobile toggle */}
-        {/* <div className="flex md:hidden items-center shrink-0">
+        <div className="flex md:hidden items-center shrink-0">
           <button
             className="p-2.5 -m-2.5 text-foreground hover:bg-accent/50 rounded-lg transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -149,7 +149,7 @@ const Header = () => {
           >
             {mobileOpen ? <X className="h-6 w-6 stroke-[2.5]" /> : <Menu className="h-6 w-6 stroke-[2.5]" />}
           </button>
-        </div> */}
+        </div>
       </div>
 
       {/* Mobile menu */}
