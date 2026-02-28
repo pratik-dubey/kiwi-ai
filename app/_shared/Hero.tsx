@@ -103,7 +103,7 @@ function Hero() {
         </InputGroup>
       </div>
 
-      <div className="flex flex-wrap gap-4 justify-center mt-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-6">
         {suggestions.map((item, index) => (
           <div
            onClick={() => setUserInput(item.description)}
@@ -114,6 +114,7 @@ function Hero() {
         rounded-2xl
         border
         cursor-pointer
+        max-w-[2000px]
         transition-all duration-300
         hover:shadow-lg hover:-translate-y-1
         ${item.bgColor}
