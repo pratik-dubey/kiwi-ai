@@ -32,6 +32,9 @@ function ProjectPage() {
     if(projectDetail&&screenConfig&&screenConfig.length == 0) {
       generateScreenConfig()
     }
+    else if(projectDetail&&screenConfig) {
+      generatescreenUiUx()
+    }
   },[projectDetail,screenConfig])
   const generateScreenConfig = async() => {
     // console.log('generating screen config ...')
@@ -46,6 +49,28 @@ function ProjectPage() {
     setLoading(false)
     getProjectDetail()
     setLoadingMsg('Loading')
+  }
+
+  const generatescreenUiUx = async() => {
+    setLoading(true)
+     for(let ind = 0; ind < screenConfig.length; ind++) {
+        const screen = screenConfig[ind]
+        if(screen?.code)continue;
+        setLoadingMsg('Generating Screen ' + ind + 1)
+
+        const result = await axios.post('/api/generate-screen-ui', {
+          projectId,
+          screenId:screen?.screenId,
+          screenName:screen.screenName,
+          purpose:screen.purpose,
+          screenDescription:screen.screenDescription
+        })
+        console.log(result.data)
+        setScreenConfig(prev => prev.map((item,i) => (
+          i=== ind ? result.data: item
+        )))
+     }
+     setLoading(false)
   }
   return (
     <div>
