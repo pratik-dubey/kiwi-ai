@@ -19,7 +19,7 @@ function ProjectSettings({projectDetail}:Prop) {
         projectDetail && setProjectName(projectDetail.projectName)
     }, [projectDetail])
     return (
-        <div className='w-[300px] mt-15 border-r border-amber-700 shadow-2xl p-4 h-[90vh]'>
+        <div className='w-[300px] border-r shadow-2xl p-4 h-[90vh]'>
             <h2 className='font-medium text-lg'>Settings</h2>
 
             <div className='mt-5'>
